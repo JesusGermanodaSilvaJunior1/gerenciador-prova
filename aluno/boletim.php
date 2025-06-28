@@ -20,4 +20,14 @@ $notas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tr>
     <?php foreach ($notas as $n):
     $media = ($n['avaliacao1'] + $n['avaliacao2'] + $N['avaliacao3'] + $n['prova_bimestral']) / 4;
+    ?>
+    <tr>
+        <td><?= $n['disciplina']?></td>
+        <td><?= $n['avaliacao1']?></td>
+        <td><?= $n['avaliacao2']?></td>
+        <td><?= $n['avaliacao3']?></td>
+        <td><?= $n['prova_bimestral']?></td>
+        <td><?= number_format($media, 2) ?></td>
+    </tr>
+    <?php endforeach; ?>
 </table>
